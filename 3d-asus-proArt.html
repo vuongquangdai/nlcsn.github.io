@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Viewer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/image/logo/logo-web.png">
+    <link rel="stylesheet" href="./assets/css/assets.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/font/themify-icons/assets/themify-icons/themify-icons.css">
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div class="header-logo">
+                <a href="#">
+                    <img src="./assets/image/logo/logo-web.png" alt="">
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li><a href="#">Điện thoại</a></li>
+                <li><a href="./laptop.html">Laptop</a></li>
+                <li><a href="./tablet.html">Tablet</a></li>
+                <li><a href="#">Phụ kiện</a></li>
+                <li><a href="./smartwatch.html">SmartWatch</a></li>
+                <li><a href="#">Đồng Hồ</a></li>
+            </ul>
+
+            <ul id="js_nav" class="nav-mobile" style="display: none;">
+                <li><a href="#">Điện thoại</a></li>
+                <li><a href="./laptop.html">Laptop</a></li>
+                <li><a href="./tablet.html">Tablet</a></li>
+                <li><a href="#">Phụ kiện</a></li>
+                <li><a href="./smartwatch.html">SmartWatch</a></li>
+                <li><a href="#">Đồng Hồ</a></li>
+            </ul>
+            
+            <div class="repon-mobi">
+                <div class="header-icon">
+                    <i class='js_btn_search bx bx-search'></i>
+                </div>
+                <div class="header-icon">
+                    <i class='bx bxs-shopping-bag'></i>
+                </div>
+                <div id="mobilemenu" class="mobi-menu">
+                    <i id="js_mobi_menu" class='bx bx-menu'></i>
+                    <i id="js_mobi_close" class='bx bx-arrow-back off'></i>
+                </div>
+            </div>
+
+            <div class="sub_search off">
+                <i class="sub-search-none ti-search"></i>
+                <input type="text" placeholder="Tìm kiếm sản phẩm" class="search_input">
+                <i class="js_close header-icon ti-close"></i>
+            </div>
+        </div>
+
+        <div id="model3D">
+            <model-viewer id="move" auto-rotate camera-controls ar xr-environment 
+            loading="eager" poster="/assets/image/logo/loading-logo.gif"            
+            src="./assets/3d-models/H7600_OLED_Laptop_Def_Def.gltf" alt="Asus" 
+            ios-src="/assets/3d-models/H7600_OLED_Laptop_Def_Def.usdz"
+            skybox-image="./assets/3d-models/enviroment/lightroom_14b.hdr">
+                <div class="controls">
+                    <button id="open" class="open-close off">Close</button>                    
+                    <button id="close" class="open-close">Open</button>                    
+                </div>
+                <button class="ar-button" slot="ar-button">
+                    <img src="/assets/image/infor/ar.png" alt="icon-ar">
+                    Activate AR
+                </button>
+            </model-viewer>
+        </div>
+    </div>
+    
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
